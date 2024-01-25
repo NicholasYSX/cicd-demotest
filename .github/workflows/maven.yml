@@ -37,7 +37,8 @@ jobs:
 
   #build:
   sonar:
-    name: Build and analyze
+    #name: Build and analyze
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

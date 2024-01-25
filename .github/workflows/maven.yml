@@ -78,8 +78,8 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args:  --file= synk.json #./cicd-demotest/src/snyk.sarif     #--sarif-file-output=
+          args:  --sarif-file-output=snyk.sarif --file=./testsynk --severity-threshold=medium #--file= synk.json #./cicd-demotest/src/snyk.sarif     #--sarif-file-output=
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk.json
+          sarif_file: snyk.sarif
